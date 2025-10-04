@@ -4,7 +4,7 @@ Modern product listing experience built with Next.js 15. The app exposes a REST 
 
 ---
 
-## ✨ Features
+## Features
 
 - **Dynamic pricing API** powered by real-time gold price data (`https://data-asg.goldprice.org/dbXRates/USD`).
 - **Optional backend filters** for price and popularity to support future product discovery UIs.
@@ -15,7 +15,7 @@ Modern product listing experience built with Next.js 15. The app exposes a REST 
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 - `src/app/api/products/route.js` – REST endpoint that enriches product data.
 - `src/lib/products.js` – Pure helpers for price calculations and filtering.

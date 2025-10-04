@@ -36,7 +36,7 @@ export default function Home() {
       setError(null);
     } catch (err) {
       console.error(err);
-      setError("Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin.");
+  setError("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -148,7 +148,7 @@ export default function Home() {
 
         {loading ? (
           <div className="flex h-64 items-center justify-center rounded-3xl border border-dashed border-neutral-200 bg-white/60 text-neutral-500">
-            Ürünler yükleniyor...
+            Loading products...
           </div>
         ) : error ? (
           <div className="flex h-64 flex-col items-center justify-center gap-3 rounded-3xl border border-rose-200 bg-rose-50 text-rose-700">
@@ -160,12 +160,12 @@ export default function Home() {
                 fetchProducts();
               }}
             >
-              Tekrar dene
+              Try again
             </button>
           </div>
         ) : products.length === 0 ? (
           <div className="flex h-64 items-center justify-center rounded-3xl border border-neutral-200 bg-white/60 text-neutral-500">
-            Şu anda gösterilecek ürün bulunmuyor.
+            No products available at the moment.
           </div>
         ) : (
           <div className="flex flex-col gap-6">
@@ -174,7 +174,7 @@ export default function Home() {
                 type="button"
                 onClick={goToPrev}
                 className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/90 p-3 text-neutral-600 shadow-lg transition hover:-translate-x-1 hover:text-neutral-900 sm:flex"
-                aria-label="Önceki ürünler"
+                aria-label="Previous products"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
@@ -184,7 +184,7 @@ export default function Home() {
                 type="button"
                 onClick={goToNext}
                 className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/90 p-3 text-neutral-600 shadow-lg transition hover:translate-x-1 hover:text-neutral-900 sm:flex"
-                aria-label="Sonraki ürünler"
+                aria-label="Next products"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />

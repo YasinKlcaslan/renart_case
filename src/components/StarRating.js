@@ -1,5 +1,6 @@
 export function StarRating({ value }) {
-  const percentage = Math.max(0, Math.min(100, (value / 5) * 100));
+  const safeValue = Number.isFinite(value) ? value : 0;
+  const percentage = Math.max(0, Math.min(100, (safeValue / 5) * 100));
 
   return (
     <div className="flex items-center gap-2">
@@ -33,7 +34,7 @@ export function StarRating({ value }) {
         </div>
       </div>
       <span className="font-montserrat text-xs font-medium text-neutral-500">
-        {value.toFixed(1)}/5
+        {safeValue.toFixed(1)}/5
       </span>
     </div>
   );
